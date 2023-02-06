@@ -22,21 +22,37 @@ import Menu from './../../../Popper/Menu/index';
 
 const cx = classNames.bind(styles);
 
-const MENU_ITEMS= [
+const MENU_ITEMS = [
     {
-        icon:<FontAwesomeIcon icon = {faGlobe}/>,
-        title:'English',
+        icon: <FontAwesomeIcon icon={faGlobe} />,
+        title: 'English',
+        children: {
+            title: 'Language',
+            data: [
+                {
+                    type: 'language',
+                    code: 'en',
+                    title: 'English',
+                },
+                {
+                    type: 'language',
+                    code: 'vi',
+                    title: 'Tiếng Việt',
+                    
+                },
+            ],
+        },
     },
     {
-        icon:<FontAwesomeIcon icon = {faCircleQuestion}/>,
-        title:'Feedback and help',
-        to: '/feedback'
+        icon: <FontAwesomeIcon icon={faCircleQuestion} />,
+        title: 'Feedback and help',
+        to: '/feedback',
     },
     {
-        icon:<FontAwesomeIcon icon = {faKeyboard}/>,
-        title:'Keyboard shortcuts',
-    }
-]
+        icon: <FontAwesomeIcon icon={faKeyboard} />,
+        title: 'Keyboard shortcuts',
+    },
+];
 
 function Header() {
     const [searchResult, setSearchResult] = useState([]);
@@ -45,6 +61,20 @@ function Header() {
             setSearchResult([1, 2, 3]);
         }, 0);
     }, []);
+
+    //handle logic
+    const handleMenuChange= (menuItem)=>{
+        
+        switch(menuItem.type){
+            case 'language':
+                //handlechange
+                break;
+                default:
+        }
+
+
+    }
+
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
@@ -87,7 +117,7 @@ function Header() {
 
                     <Button primary>Log in</Button>
 
-                    <Menu items={MENU_ITEMS}>
+                    <Menu items={MENU_ITEMS} onChange={handleMenuChange}>
                         <button className={cx('more-btn')}>
                             <FontAwesomeIcon icon={faEllipsisVertical}></FontAwesomeIcon>
                         </button>
