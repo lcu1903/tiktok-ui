@@ -99,6 +99,7 @@ function Header() {
             icon: <FontAwesomeIcon icon={faSignOut} />,
             title: 'Log out',
             to: '/feedback',
+            separate:true,
         },
 
     ]
