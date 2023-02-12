@@ -25,6 +25,7 @@ import images from './../../../../assets/image/index';
 import AccountItem from 'src/components/AccountItem';
 import Button from 'src/components/Button';
 import Menu from './../../../Popper/Menu/index';
+import Image from './../../../Image/index.js';
 
 const cx = classNames.bind(styles);
 
@@ -77,7 +78,7 @@ function Header() {
             default:
         }
     };
-    
+
     const userMenu = [
         {
             icon: <FontAwesomeIcon icon={faUserCircle} />,
@@ -99,12 +100,12 @@ function Header() {
             icon: <FontAwesomeIcon icon={faSignOut} />,
             title: 'Log out',
             to: '/feedback',
-            separate:true,
+            separate: true,
         },
-
-    ]
+    ];
 
     return (
+        
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
                 <img src={images.logo} alt="Tiktok"></img>
@@ -139,7 +140,7 @@ function Header() {
                         </div>
                     </HeadlessTippy>
                 </div>
-
+                            
                 <div className={cx('actions')}>
                     {currentUser ? (
                         <>
@@ -160,7 +161,7 @@ function Header() {
                     ) : (
                         <>
                             <Button text leftIcon={<FontAwesomeIcon icon={faPlus} />}>
-                                Upload
+                                Upload 
                             </Button>
 
                             <Button primary>Log in</Button>
@@ -169,11 +170,12 @@ function Header() {
 
                     <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
                         {currentUser ? (
-                            <img
+                            <Image
                                 className={cx('user-avatar')}
                                 src="https://scontent.xx.fbcdn.net/v/t1.15752-9/300250292_515280730044176_5001380216375747561_n.png?stp=dst-png_p206x206&_nc_cat=111&ccb=1-7&_nc_sid=aee45a&_nc_ohc=BJXqBL3SQ-AAX-p-tTa&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdSYE7mZiZd90nlzniKX_f0AJYfE65nUaavAy6ItKvdWCg&oe=640858B3"
                                 alt="Nguyen van a"
-                            ></img>
+                                fallback="https://scontent.xx.fbcdn.net/v/t1.15752-9/330440823_917525046263195_139611596380080579_n.png?stp=dst-png_p206x206&_nc_cat=101&ccb=1-7&_nc_sid=aee45a&_nc_ohc=ZVt6HMoDS5wAX8_zKgr&_nc_oc=AQn44e9V1jXGlGDlHsmzKlb8w_yuqiPQBBaTrgpFruxuAmWxcRK9Uom7uSH7chh_x57lYawX-HPFJuyi7ij6fZhL&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdR8i8oKTk68Q4vq6yg17EaRe21v1O59ipNSKImDyukVzw&oe=64104CA1"
+                            />
                         ) : (
                             <button className={cx('more-btn')}>
                                 <FontAwesomeIcon icon={faEllipsisVertical}></FontAwesomeIcon>

@@ -4,6 +4,7 @@
     justify-content: center;
     font-size: 1.6rem;
     font-weight: 700;
+    font-family: 'ProximaNova', sans-serif;
     border-radius: 4px;
     height: 36px;
     min-width: 100px;
@@ -23,14 +24,13 @@
     }
 }
 .icon + .title,
-.title+ .icon {
+.title + .icon {
     margin-left: 8px;
 }
-.icon{
+.icon {
     display: inline-block;
     text-align: center;
     width: 20px;
-    
 }
 
 //Button type
@@ -83,4 +83,3 @@
     padding: 14px 16px;
     min-width: 140px;
 }
-
