@@ -135,7 +135,7 @@ function Header() {
                         {currentUser ? (
                             <Image
                                 className={cx('user-avatar')}
-                                src="https://scontent.xx.fbcdn.net/v/t1.15752-9/300250292_515280730044176_5001380216375747561_n.png?stp=dst-png_p206x206&_nc_cat=111&ccb=1-7&_nc_sid=aee45a&_nc_ohc=BJXqBL3SQ-AAX-p-tTa&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdSYE7mZiZd90nlzniKX_f0AJYfE65nUaavAy6ItKvdWCg&oe=640858B3"
+                                src="https://scontent.xx.fbcdn.net/v/t1.15752-9/330440823_917525046263195_139611596380080579_n.png?stp=dst-png_p206x206&_nc_cat=101&ccb=1-7&_nc_sid=aee45a&_nc_ohc=ZVt6HMoDS5wAX8_zKgr&_nc_oc=AQn44e9V1jXGlGDlHsmzKlb8w_yuqiPQBBaTrgpFruxuAmWxcRK9Uom7uSH7chh_x57lYawX-HPFJuyi7ij6fZhL&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdR8i8oKTk68Q4vq6yg17EaRe21v1O59ipNSKImDyukVzw&oe=64104CA1"
                                 alt="Nguyen van a"
                                 fallback="https://scontent.xx.fbcdn.net/v/t1.15752-9/330440823_917525046263195_139611596380080579_n.png?stp=dst-png_p206x206&_nc_cat=101&ccb=1-7&_nc_sid=aee45a&_nc_ohc=ZVt6HMoDS5wAX8_zKgr&_nc_oc=AQn44e9V1jXGlGDlHsmzKlb8w_yuqiPQBBaTrgpFruxuAmWxcRK9Uom7uSH7chh_x57lYawX-HPFJuyi7ij6fZhL&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdR8i8oKTk68Q4vq6yg17EaRe21v1O59ipNSKImDyukVzw&oe=64104CA1"
                             />

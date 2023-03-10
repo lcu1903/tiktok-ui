@@ -1,8 +1,10 @@
 import classNames from 'classnames/bind';
 import styles from './Search.module.scss';
 
-import { useEffect, useState, useRef, useCallback } from 'react';
-import useDebounce from './../../../customHooks/index';
+import { useEffect, useState, useRef } from 'react';
+import { useDebounce } from '../../../customHooks/index.js';
+
+import * as searchServices from './../../../../apiServices/searchService';
 
 import { faCircleXmark, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -23,22 +25,24 @@ function Search() {
     const inputRef = useRef();
     const debouncedSearchValue = useDebounce(searchValue, 500);
 
-    const apiFetch = useCallback((searchValue) => {
-        fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(searchValue)}&type=less`)
-            .then((res) => res.json())
-            .then((res) => {
-                setSearchResult(res.data);
-                setLoading(false);
-            });
-    }, []);
+    //Debounce
     useEffect(() => {
         if (!debouncedSearchValue.trim()) {
-            setSearchResult([])
+            setSearchResult([]);
             return;
         }
-        setLoading(true);
-        apiFetch(debouncedSearchValue);
-    }, [apiFetch, debouncedSearchValue]);
+
+        const fetchApi = async () => {
+            setLoading(true);
+
+            const result = await searchServices.search(debouncedSearchValue);
+            setSearchResult(result);
+
+            setLoading(false);
+        };
+
+        fetchApi();
+    }, [debouncedSearchValue]);
 
     const handleClear = () => {
         setSearchValue('');
