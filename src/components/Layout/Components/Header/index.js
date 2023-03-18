@@ -1,5 +1,6 @@
 import classNames from 'classnames/bind';
 import styles from './Header.module.scss';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faPlus,
@@ -11,8 +12,11 @@ import {
     faSignOut,
 } from '@fortawesome/free-solid-svg-icons';
 import { faKeyboard, faUserCircle } from '@fortawesome/free-regular-svg-icons';
+
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
+import { Link } from 'react-router-dom';
+import routesConfig from './../../../../config/routes';
 import images from './../../../../assets/image/index';
 import Button from 'src/components/Button';
 import Menu from './../../../Popper/Menu/index';
@@ -95,29 +99,32 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <img src={images.logo} alt="Tiktok"></img>
+                <Link to={routesConfig.home} className={cx('logo-link')}>
+                    <img src={images.logo} alt="Tiktok"></img>
+                </Link>
 
-               <Search/>
+                <Search />
 
                 <div className={cx('actions')}>
                     {currentUser ? (
                         <>
-                            <Button text leftIcon={<FontAwesomeIcon icon={faPlus} />}>
+                            <Button text leftIcon={<FontAwesomeIcon icon={faPlus}/>}>
                                 Upload
                             </Button>
-                            <Tippy delay={[0, 200]} content="Create effects">
+                            <Tippy delay={[0, 200]} content="Create effects" placement="bottom">
                                 <button className={cx('action-btn')}>
-                                    <EffectIcon className={cx('ef_btn')} />
+                                    <EffectIcon className={cx('ef_btn')}/>
                                 </button>
                             </Tippy>
-                            <Tippy delay={[0, 200]} content="Messages">
+                            <Tippy delay={[0, 50]} content="Message" placement="bottom">
                                 <button className={cx('action-btn')}>
                                     <MessageIcon />
                                 </button>
                             </Tippy>
-                            <Tippy delay={[0, 200]} content="Inbox">
+                            <Tippy delay={[0, 50]} content="Inbox" placement="bottom">
                                 <button className={cx('action-btn')}>
                                     <InboxIcon />
+                                    <span className={cx('badge')}>12</span>
                                 </button>
                             </Tippy>
                         </>
@@ -135,9 +142,9 @@ function Header() {
                         {currentUser ? (
                             <Image
                                 className={cx('user-avatar')}
-                                src="https://scontent.xx.fbcdn.net/v/t1.15752-9/330440823_917525046263195_139611596380080579_n.png?stp=dst-png_p206x206&_nc_cat=101&ccb=1-7&_nc_sid=aee45a&_nc_ohc=ZVt6HMoDS5wAX8_zKgr&_nc_oc=AQn44e9V1jXGlGDlHsmzKlb8w_yuqiPQBBaTrgpFruxuAmWxcRK9Uom7uSH7chh_x57lYawX-HPFJuyi7ij6fZhL&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdR8i8oKTk68Q4vq6yg17EaRe21v1O59ipNSKImDyukVzw&oe=64104CA1"
+                                src="https://scontent.fsgn5-6.fna.fbcdn.net/v/t39.30808-6/313358581_3304383283118290_6302847273669008231_n.jpg?stp=cp6_dst-jpg_p720x720&_nc_cat=108&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=7ug957vY5yQAX_GHbjJ&_nc_ht=scontent.fsgn5-6.fna&oh=00_AfCCRWEUYjWM7O2QaabOAm2BOC7jWMDTNLSCCUg0Jbszjw&oe=6419EA66"
                                 alt="Nguyen van a"
-                                fallback="https://scontent.xx.fbcdn.net/v/t1.15752-9/330440823_917525046263195_139611596380080579_n.png?stp=dst-png_p206x206&_nc_cat=101&ccb=1-7&_nc_sid=aee45a&_nc_ohc=ZVt6HMoDS5wAX8_zKgr&_nc_oc=AQn44e9V1jXGlGDlHsmzKlb8w_yuqiPQBBaTrgpFruxuAmWxcRK9Uom7uSH7chh_x57lYawX-HPFJuyi7ij6fZhL&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdR8i8oKTk68Q4vq6yg17EaRe21v1O59ipNSKImDyukVzw&oe=64104CA1"
+                                fallback="https://scontent.fsgn5-6.fna.fbcdn.net/v/t39.30808-6/313358581_3304383283118290_6302847273669008231_n.jpg?stp=cp6_dst-jpg_p720x720&_nc_cat=108&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=7ug957vY5yQAX_GHbjJ&_nc_ht=scontent.fsgn5-6.fna&oh=00_AfCCRWEUYjWM7O2QaabOAm2BOC7jWMDTNLSCCUg0Jbszjw&oe=6419EA66"
                             />
                         ) : (
                             <button className={cx('more-btn')}>
