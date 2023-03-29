@@ -58,8 +58,9 @@ function Search() {
             setSearchValue(searchValue);
         }
     };
-    
+
     return (
+        //Using a wrapper <div> or <span> tag around the reference element solves this by creating a new parentNode context.
         <div>
             <HeadlessTippy
                 interactive={true}
@@ -92,7 +93,7 @@ function Search() {
                     )}
 
                     {loading && <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />}
-                    <button className={cx('search-btn')} onMouseDown={e => e.preventDefault()}>
+                    <button className={cx('search-btn')} onMouseDown={(e) => e.preventDefault()}>
                         <SearchIcon />
                     </button>
                 </div>
