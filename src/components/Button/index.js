@@ -1,6 +1,7 @@
 import classNames from 'classnames/bind';
 import styles from './Button.module.scss';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const cx = classNames.bind(styles);
 function Button({
@@ -22,7 +23,6 @@ function Button({
 }) {
     let Comp = 'button';
     const props = {
-        
         onClick,
         ...passProps,
     };
@@ -53,7 +53,6 @@ function Button({
         text,
         leftIcon,
         rightIcon,
-        
     });
     return (
         <Comp className={classes} {...props}>
@@ -63,5 +62,8 @@ function Button({
         </Comp>
     );
 }
+Button.propTypes = {
+    children: PropTypes.node.isRequired,
+};
 
 export default Button;
