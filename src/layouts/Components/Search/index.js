@@ -2,9 +2,9 @@ import classNames from 'classnames/bind';
 import styles from './Search.module.scss';
 
 import { useEffect, useState, useRef } from 'react';
-import { useDebounce } from '../../../customHooks/index.js';
+import { useDebounce } from 'src/components/customHooks/index.js';
 
-import * as searchServices from './../../../../apiServices/searchService';
+import * as searchServices from 'src/services/searchService';
 
 import { faCircleXmark, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -12,7 +12,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import HeadlessTippy from '@tippyjs/react/headless';
 import AccountItem from 'src/components/AccountItem';
 import { Wrapper as PopperWrapper } from 'src/components/Popper';
-import { SearchIcon } from './../../../Icons/index';
+import { SearchIcon } from 'src/components/Icons/index';
 
 const cx = classNames.bind(styles);
 

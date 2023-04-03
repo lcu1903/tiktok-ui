@@ -16,12 +16,12 @@ import { faKeyboard, faUserCircle } from '@fortawesome/free-regular-svg-icons';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 import { Link } from 'react-router-dom';
-import routesConfig from './../../../../config/routes';
-import images from './../../../../assets/image/index';
+import config from './../../../config';
+import images from './../../../assets/image/index';
 import Button from 'src/components/Button';
-import Menu from './../../../Popper/Menu/index';
-import Image from './../../../Image/index.js';
-import { UploadIcon, MessageIcon, InboxIcon, EffectIcon } from './../../../Icons/index';
+import Menu from 'src/components/Popper/Menu/index';
+import Image from 'src/components/Image/index.js';
+import { UploadIcon, MessageIcon, InboxIcon, EffectIcon } from 'src/components/Icons/index';
 
 import Search from '../Search';
 
@@ -99,7 +99,7 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <Link to={routesConfig.home} className={cx('logo-link')}>
+                <Link to={config.routes.home} className={cx('logo-link')}>
                     <img src={images.logo} alt="Tiktok"></img>
                 </Link>
 
