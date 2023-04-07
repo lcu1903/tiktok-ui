@@ -108,12 +108,12 @@ function Header() {
                 <div className={cx('actions')}>
                     {currentUser ? (
                         <>
-                            <Button text leftIcon={<FontAwesomeIcon icon={faPlus}/>}>
+                            <Button text leftIcon={<FontAwesomeIcon icon={faPlus} />}>
                                 Upload
                             </Button>
                             <Tippy delay={[0, 200]} content="Create effects" placement="bottom">
                                 <button className={cx('action-btn')}>
-                                    <EffectIcon className={cx('ef_btn')}/>
+                                    <EffectIcon className={cx('ef_btn')} />
                                 </button>
                             </Tippy>
                             <Tippy delay={[0, 50]} content="Message" placement="bottom">
