@@ -21,8 +21,7 @@ import images from './../../../assets/image/index';
 import Button from 'src/components/Button';
 import Menu from 'src/components/Popper/Menu/index';
 import Image from 'src/components/Image/index.js';
-import { UploadIcon, MessageIcon, InboxIcon, EffectIcon } from 'src/components/Icons/index';
-
+import { MessageIcon, InboxIcon, EffectIcon } from 'src/components/Icons/index';
 import Search from '../Search';
 
 const cx = classNames.bind(styles);
@@ -130,7 +129,7 @@ function Header() {
                         </>
                     ) : (
                         <>
-                            <Button text leftIcon={<UploadIcon />}>
+                            <Button text leftIcon={<FontAwesomeIcon icon={faPlus} />}>
                                 Upload
                             </Button>
 
